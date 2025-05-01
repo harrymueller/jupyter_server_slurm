@@ -20,7 +20,7 @@ function show_help {
     echo "    -m, --mem           Memory (default: 8G)"
     echo "    -p, --partition     Partition (default: regular)"
     echo "    -n, --name          Job Name (default: jupyter_server_hm)"
-    echo "    -g, --go            Default server (12h, 16CPUs, 128GB)"
+    echo "    -g, --go            Default server (12h, 16CPUs, 512B)"
 }
 
 ##############################
@@ -64,7 +64,7 @@ while [[ "$#" -gt 0 ]]; do
         -p|--partition) PARTITION="$2"; shift ;;
         -n|--name) NAME="$2"; shift ;;
         -s|--start) ;;
-        -g|--go) TIME="12h"; CPUS="16"; MEM="256G" ;;
+        -g|--go) TIME="12h"; CPUS="16"; MEM="512G" ;;
         --cancel) ;;
     esac
     shift
@@ -80,7 +80,7 @@ TIME=${TIME:-"01:00:00"}
 CPUS=${CPUS:-"4"}
 MEM=${MEM:-"8G"}
 PARTITION=${PARTITION:-"regular"}
-NAME=${NAME:-"jupyter_server_hm"}
+NAME=${NAME:-"jupyter_server_$USER"}
 
 convert_time
 

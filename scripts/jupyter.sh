@@ -71,7 +71,7 @@ if [ $SHOW_HELP = true ]; then
     exit 0
 fi
 
-NAME=${NAME:-"jupyter_server_hm"}
+NAME=${NAME:-"jupyter_server_$USER"}
 
 ##############################
 # IF NODE NOT RUNNING, DELETE LOGS
