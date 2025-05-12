@@ -64,7 +64,7 @@ while [[ "$#" -gt 0 ]]; do
         -p|--partition) PARTITION="$2"; shift ;;
         -n|--name) NAME="$2"; shift ;;
         -s|--start) ;;
-        -g|--go) TIME="12h"; CPUS="16"; MEM="512G" ;;
+        -g|--go) TIME="12h"; CPUS="16"; MEM="256G" ;;
         --cancel) ;;
     esac
     shift
